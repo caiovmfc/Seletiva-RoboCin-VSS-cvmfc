@@ -25,6 +25,27 @@ class CustomPlayer : public Processing {
     SharedOptional<Field> field;
     SharedValue<QSet<Qt::Key>> keys;
   };
+  // ponto que guarda a posição mais recente do goleiro
+  Point posiGY = {0, 0};
+  //
+  // variável que controla o número de iterações onde o goleiro não se moveu
+  // para verificar se ele está preso
+  int presoGy = 0;
+  //
+  // ponto que guarda a posição mais recente do meia
+  Point posiMY = {0, 0};
+  //
+  // variável que controla o número de iterações onde o meia não se moveu
+  // para verificar se ele está preso
+  int presoMy = 0;
+  //
+  // ponto que guarda a posição mais recente do atacante
+  Point posiAY = {0, 0};
+  //
+  // variável que controla o número de iterações onde o atacante não se moveu
+  // para verificar se ele está preso
+  int presoAy = 0;
+  //
   SharedWrapper<Shared, std::mutex> shared;
 
   std::optional<Field> field;
